@@ -52,8 +52,6 @@ function deleteNumber(){
 }
 
 
-//TO-DO: use string.prototype. 
-
 
 let buttonDecimal = ".";
 
@@ -82,6 +80,10 @@ operators.forEach((button) => {
       fired = true;
       firstNum = secondNum;
       operatorText += button.id;
+      if(currentOperandText == ""){
+        firstNum = 0;
+        currentOperandText = 0;
+      }
       previousOperand.textContent = currentOperandText + operatorText;
       currentOperandText = "";
     }
@@ -96,8 +98,10 @@ equals.addEventListener('click', function()  {
   console.log(operateResult);
   let displayNum = operateResult;
   previousOperand.textContent = displayNum;
-  
+  currentOperandText = displayNum;
+  currentOperand.textContent = "";
+  operatorText = "";
+  fired = false;
 });
 
-//TO-DO: The decimal problem
 //TO-DO: Letting the user press the equals again when fire is done. 
