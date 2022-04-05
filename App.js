@@ -68,7 +68,7 @@ numbers.forEach((button) => {
   button.addEventListener('click', () => {
     addNums(button.id);
     currentOperand.textContent = currentOperandText;
-    secondNum = currentOperandText;//stores the first Num
+    firstNum = currentOperandText;//stores the first Num
   });
 });
 
@@ -78,10 +78,10 @@ operators.forEach((button) => {
   button.addEventListener('click', () => {
     if(!fired) {
       fired = true;
-      firstNum = secondNum;
+      secondNum = firstNum;
       operatorText += button.id;
       if(currentOperandText == ""){
-        firstNum = 0;
+        secondNum = 0;
         currentOperandText = 0;
       }
       previousOperand.textContent = currentOperandText + operatorText;
@@ -94,12 +94,13 @@ operators.forEach((button) => {
 
 
 equals.addEventListener('click', function()  {
-  operateResult = operateFunction(operatorText, parseFloat(firstNum), parseFloat(secondNum));
+  //secondNum is put first to take into account the division and subtraction orders
+  operateResult = operateFunction(operatorText, parseFloat(secondNum), parseFloat(firstNum));
   console.log(operateResult);
   let displayNum = operateResult;
   previousOperand.textContent = displayNum;
+  firstNum = displayNum;
   currentOperandText = displayNum;
-  currentOperand.textContent = "";
   operatorText = "";
   fired = false;
 });
