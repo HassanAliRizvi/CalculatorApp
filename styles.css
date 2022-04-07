@@ -7,11 +7,32 @@ body{
     top: 30%;
     left: 45%;
     transform: translate(-50%,-50);
-    
+}
+
+.calculator-grid > div{
+    font-size: 2em;
+}
+
+.calculator-grid > button :hover{
+    background-color: yellow;
 }
 
 .output{
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    background-color: yellow;
+    border: black 1px solid;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand{
+    font-size: small;
+}
+
+.current-operand{
+    font-size: 1.5em;
 }
 
