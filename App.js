@@ -95,6 +95,10 @@ operators.forEach((button) => {
 
 equals.addEventListener('click', function()  {
   //secondNum is put first to take into account the division and subtraction orders
+  if(operatorText == "÷"){
+    operatorText = "/"
+    operateResult = operateFunction(operatorText, parseFloat(secondNum), parseFloat(firstNum));
+  }
   operateResult = operateFunction(operatorText, parseFloat(secondNum), parseFloat(firstNum));
   console.log(operateResult);
   let displayNum = operateResult;
