@@ -1,38 +1,43 @@
 body{
-    background-color: peachpuff;
+    background-color: lightblue;
 }
 
 .calculator-grid{
-    position: absolute;
-    top: 30%;
-    left: 45%;
-    transform: translate(-50%,-50);
-}
-
-.calculator-grid > div{
-    font-size: 2em;
-}
-
-.calculator-grid > button :hover{
-    background-color: yellow;
+  margin: 10px auto;
+  width: 400px;
+  padding: 20px 50px 20px;
+  background-color: white;
+  text-align: center;
 }
 
 .output{
+    background-color: orange;
+    width: 400px;
+    padding: 10px 5px 10px 5px;
+    margin: 5px 5px 5px 1px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: yellow;
-    border: black 1px solid;
-    padding: 10px;
-    word-wrap: break-word;
-    word-break: break-all;
-}
+    justify-content: flex-end;
 
-.previous-operand{
-    font-size: small;
 }
 
 .current-operand{
-    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.number-screen{
+    background-color: grey;
+    width: 400px;
+    padding: 10px 5px 10px 5px;
+    margin: 5px 5px 5px 1px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+
+.clear{
+    grid-column: span 3;
 }
 

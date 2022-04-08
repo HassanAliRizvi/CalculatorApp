@@ -106,6 +106,7 @@ equals.addEventListener('click', function()  {
   firstNum = displayNum;
   currentOperandText = displayNum;
   operatorText = "";
+  currentOperand.textContent = "";
   fired = false;
 });
 
