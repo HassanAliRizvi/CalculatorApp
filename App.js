@@ -5,6 +5,8 @@ const operators = document.querySelectorAll(".operator");
 const currentOperand = document.querySelector(".current-operand");
 const previousOperand = document.querySelector(".previous-operand");
 const decimalButton = document.querySelector(".decimal");
+const clear = document.querySelector(".clear");
+const del = document.querySelector(".delete");
 let currentOperandText = "";
 let previousOperandText = "";
 let operatorText = "";
@@ -42,21 +44,26 @@ function operateFunction(operator, num1, num2){
 
 }
 
-function clear(){
-
-
-}
-
-function deleteNumber(){
-
-}
-
-
 
 let buttonDecimal = ".";
 
 var fired = false;//to avoid adding operators or call the event once. 
 
+
+clear.addEventListener('click', () => {
+  previousOperand.textContent = " ";
+  currentOperand.textContent = " ";
+  currentOperandText = " ";
+  previousOperandText = " ";
+  fired = false;
+
+});
+
+
+del.addEventListener('click', () => {
+  currentOperand.textContent = currentOperand.textContent.slice(0, -1);
+  currentOperandText = " ";
+});
 
 function addNums(nums){
   if((nums == ".") && currentOperand.textContent.includes(".")) return;//stops the function
@@ -80,7 +87,7 @@ operators.forEach((button) => {
       fired = true;
       secondNum = firstNum;
       operatorText += button.id;
-      if(currentOperandText == ""){
+      if(currentOperandText == " "){
         secondNum = 0;
         currentOperandText = 0;
       }

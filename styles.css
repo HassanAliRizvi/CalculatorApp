@@ -36,6 +36,19 @@ body{
     grid-column-gap: 20px;
 }
 
+.number-screen >  button{
+    font-size: 20px;
+    background-color: grey;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid black;
+
+}
+
+.number-screen >  button:hover{
+    background-color: yellow;
+}
+
 
 .clear{
     grid-column: span 3;
